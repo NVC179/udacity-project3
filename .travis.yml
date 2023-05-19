@@ -22,7 +22,7 @@ script:
   - docker tag reverseproxy vietcuong179/reverseproxy:v3
 
 after_success:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push vietcuong179/udagram-api-feed:v3
   - docker push vietcuong179/udagram-api-user:v3
   - docker push vietcuong179/udagram-frontend:v3
