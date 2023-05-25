@@ -18,7 +18,7 @@ script:
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag udagram-api-feed vietcuong179/udagram-api-feed:v3
   - docker tag udagram-api-user vietcuong179/udagram-api-user:v3
-  - docker tag udagram-frontend:local vietcuong179/udagram-frontend:v4
+  - docker tag udagram-frontend:local vietcuong179/udagram-frontend:v5
   - docker tag reverseproxy vietcuong179/reverseproxy:v3
 
 after_success:
@@ -26,5 +26,5 @@ after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push vietcuong179/udagram-api-feed:v3
   - docker push vietcuong179/udagram-api-user:v3
-  - docker push vietcuong179/udagram-frontend:v4
+  - docker push vietcuong179/udagram-frontend:v5
   - docker push vietcuong179/reverseproxy:v3
