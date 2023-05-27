@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: publicreverseproxy
+  name: reverseproxy
   labels:
     service: reverseproxy
 spec:
@@ -13,13 +13,7 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
   - name: "8080"
-    port: 80
+    port: 8080
     targetPort: 8080
   selector:
-    service: reverseproxy
-  sessionAffinity: None
-  type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - hostname: a6f0fafb2ec384aa3a363e2fc4063852-1806770700.us-east-2.elb.amazonaws.com
+    app: reverseproxy

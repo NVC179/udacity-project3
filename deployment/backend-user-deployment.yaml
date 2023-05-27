@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-user
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       run: backend-user
@@ -12,16 +12,23 @@ spec:
       labels:
         run: backend-user
     spec:
+      restartPolicy: Always
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
       containers:
       - name: backend-user
-        image: vietcuong179/udagram-api-user:v6
+        image: vietcuong179/udagram-api-user:v10
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
-          limits:
-            cpu: 1000m
           requests:
-            cpu: 500m
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
         env:
         - name: POSTGRES_USERNAME
           value: postgres

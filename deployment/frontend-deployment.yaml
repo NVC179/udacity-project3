@@ -14,11 +14,14 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: vietcuong179/udagram-frontend:v6c
+        image: vietcuong179/udagram-frontend:v10
         ports:
         - containerPort: 80
         resources:
-          limits:
-            cpu: 1000m
           requests:
-            cpu: 500m
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+      restartPolicy: Always
