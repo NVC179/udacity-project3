@@ -26,5 +26,5 @@ after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push vietcuong179/udagram-api-feed:v10
   - docker push vietcuong179/udagram-api-user:v10
-  - docker push vietcuong179/udagram-frontend:v11
+  - docker push vietcuong179/udagram-frontend:v12
   - docker push vietcuong179/reverseproxy:v10
