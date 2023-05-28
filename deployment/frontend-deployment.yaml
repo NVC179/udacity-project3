@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: frontend
+      app: frontend
   template:
     metadata:
       labels:
-        run: frontend
+        app: frontend
     spec:
       containers:
       - name: frontend
