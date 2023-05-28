@@ -8,8 +8,6 @@ import * as c from '../../../../config/config';
 const router: Router = Router();
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
-  res.header("Access-Control-Allow-Origin", "http://ad75f0874083b4cd390aba1a2cdae4e2-1153622156.us-east-2.elb.amazonaws.com");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   if (!req.headers || !req.headers.authorization) {
     return res.status(401).send({message: 'No authorization headers.'});
   }

@@ -6,7 +6,7 @@ data:
   POSTGRES_USERNAME: cuongnv
   POSTGRES_PASSWORD: postgres
   POSTGRES_HOST: cuongnv.czw69l4gd9vg.us-east-1.rds.amazonaws.com
-  POSTGRES_DB: cuongnv
+  POSTGRES_DB: postgres
   AWS_BUCKET: cuongnv98
   AWS_REGION: us-east-1
   AWS_PROFILE: default
